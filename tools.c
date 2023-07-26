@@ -13,7 +13,7 @@ char *_strtok_r(char *string, char *delim, char **save_ptr)
 	char *finish;
 	
 	if (string == NULL)
-		dtring = *save_ptr;
+		string = *save_ptr;
 	if (*string == '\0')
 	{
 		*save_ptr = string;
@@ -49,7 +49,7 @@ int _atoi(char *s)
 	do {
 		if (*s == '-')
 			return (-1);
-		else if ((*s < '0' || *s > '9') && *s != '\0)
+		else if ((*s < '0' || *s > '9') && *s != '\0')
 			return (-1);
 		else if (*s >= '0' && *s <= '9')
 			n = (n * 10) + (*s - '0');
@@ -127,7 +127,7 @@ void remove_comment(char *input)
 	{
 		if (input[i] == '#' && input[i - 1] == ' ')
 			break;
-		i++
+		i++;
 	}
 	input[i] = '\0';
 }

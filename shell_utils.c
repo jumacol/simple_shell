@@ -28,7 +28,7 @@ int parse_command(char *command)
 		free(path);
 		return (PATH_COMMAND);
 	}
-	return (INVALID_COMMAND);
+	return (IVALID_COMMAND);
 }
 
 /**
@@ -62,7 +62,7 @@ void execute_command(char **tokenized_command, int command_type)
 		func = get_func(tokenized_command[0]);
 		func(tokenized_command);
 	}
-	if (command_type == INVALID_COMMAND)
+	if (command_type == IVALID_COMMAND)
 	{
 		print(shell_name, STDERR_FILENO);
 		print(": 1: ", STDERR_FILENO);
@@ -119,7 +119,7 @@ void (*get_func(char *command))(char **)
 {
 	int i;
 	function_map mapping[] = {
-		{"env", env}, {"exit", exit}
+		{"env", env}, {"exit", quit}
 	};
 	
 	for (i = 0; i < 2; i++)
