@@ -27,7 +27,7 @@ void quit(char **tokenized_command)
 {
 	int num_token = 0, arg;
 
-	for(; tokenized_command[num_token] != NULL; num_token++)
+	for (; tokenized_command[num_token] != NULL; num_token++)
 		;
 	if (num_token == 1)
 	{

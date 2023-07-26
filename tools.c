@@ -11,7 +11,7 @@
 char *_strtok_r(char *string, char *delim, char **save_ptr)
 {
 	char *finish;
-	
+
 	if (string == NULL)
 		string = *save_ptr;
 	if (*string == '\0')
@@ -56,13 +56,13 @@ int _atoi(char *s)
 		else if (n > 0)
 			break;
 	} while (*s++);
-	return(n);
+	return (n);
 }
 
 /**
  * _realloc - reallocates a memory block
  * @ptr: pointer
- * @old-size: size of ptr
+ * @old_size: size of ptr
  * @new_size: size of the new memory to be allocated
  *
  * Return: pointer to the adress of the new memory block

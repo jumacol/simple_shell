@@ -41,6 +41,7 @@ int parse_command(char *command)
 void execute_command(char **tokenized_command, int command_type)
 {
 	void (*func)(char **command);
+
 	if (command_type == EXTERNAL_COMMAND)
 	{
 		if (execve(tokenized_command[0], tokenized_command, NULL) == -1)
@@ -85,8 +86,8 @@ char *check_path(char *command)
 	char *path = _getenv("PATH");
 	int i;
 
-	if ( path == NULL || _strlen(path) == 0)
-		return(NULL);
+	if (path == NULL || _strlen(path) == 0)
+		return (NULL);
 	path_cpy = malloc(sizeof(*path_cpy) * (_strlen(path) + 1));
 	_strcpy(path, path_cpy);
 	path_array = tokenizer(path_cpy, ":");
@@ -121,7 +122,7 @@ void (*get_func(char *command))(char **)
 	function_map mapping[] = {
 		{"env", env}, {"exit", quit}
 	};
-	
+
 	for (i = 0; i < 2; i++)
 	{
 		if (_strcmp(command, mapping[i].command_name) == 0)

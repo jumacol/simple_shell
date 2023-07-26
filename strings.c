@@ -4,7 +4,7 @@
  * @first: first string to compare
  * @second: seconf string to compare
  *
- * return: difference between strings
+ * Return: difference between strings
  */
 int _strcmp(char *first, char *second)
 {
@@ -32,7 +32,7 @@ char *_strcat(char *destination, char *source)
 	int len_dest = _strlen(destination);
 	int len_source = _strlen(source);
 
-	new_string = malloc(sizeof(*new_string) * (len_dest + len_source +1));
+	new_string = malloc(sizeof(*new_string) * (len_dest + len_source + 1));
 	_strcpy(destination, new_string);
 	_strcpy(source, new_string + len_dest);
 	new_string[len_dest + len_source] = '\0';
@@ -62,7 +62,7 @@ int _strspn(char *str1, char *str2)
 }
 
 /**
- * strcspn - computesegment of str1 which consists of characters not in str2
+ * _strcspn - computesegment of str1 which consists of characters not in str2
  * @str1: string to seach
  * @str2: string to be used
  *
@@ -93,7 +93,7 @@ char *_strchr(char *s, char c)
 {
 	int i = 0;
 
-	for(; s[i] != c && s[i] != '\0'; i++)
+	for (; s[i] != c && s[i] != '\0'; i++)
 		;
 	if (s[i] == c)
 		return (s + i);
