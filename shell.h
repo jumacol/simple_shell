@@ -29,6 +29,7 @@
  */
 
 typedef struct map
+
 {
 	char *command_name;
 	void (*func)(char **command);
