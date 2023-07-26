@@ -34,7 +34,7 @@ typedef struct map
 	void (*func)(char **command);
 } function_map;
 
-extern char hcar **environ;
+extern char **environ;
 extern char *line;
 extern char **commands;
 extern char *shell_name;
@@ -64,7 +64,7 @@ void remove_comment(char *);
 /*utils*/
 int parse_command(char *);
 void execute_command(char **, int);
-char *check+path(char *);
+char *check_path(char *);
 void (*get_func(char *))(char **);
 char *_getenv(char *);
 

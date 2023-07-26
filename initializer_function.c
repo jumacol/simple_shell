@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * initializer - starts executing everthing
  * @current_command: try to check current token

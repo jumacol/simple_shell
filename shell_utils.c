@@ -43,9 +43,9 @@ void execute_command(char **tokenized_command, int command_type)
 	void (*func)(char **command);
 	if (command_type == EXTERNAL_COMMAND)
 	{
-		if (execve(tokenized_command[0], tokenized_command, NULL) ==_1)
+		if (execve(tokenized_command[0], tokenized_command, NULL) == -1)
 		{
-			perrer(_getenv("PWD"));
+			perror(_getenv("PWD"));
 			exit(2);
 		}
 	}
@@ -90,7 +90,7 @@ char *check_path(char *command)
 	path_cpy = malloc(sizeof(*path_cpy) * (_strlen(path) + 1));
 	_strcpy(path, path_cpy);
 	path_array = tokenizer(path_cpy, ":");
-	for (i = 0; path_array[i] 1= NULL; i++)
+	for (i = 0; path_array[i] != NULL; i++)
 	{
 		temp2 = _strcat(path_array[i], "/");
 		temp = _strcat(temp2, command);
@@ -118,7 +118,9 @@ char *check_path(char *command)
 void (*get_func(char *command))(char **)
 {
 	int i;
-	function_map mapping[] = {{"env", env}, {"exit", exit}};
+	function_map mapping[] = {
+		{"env", env}, {"exit", exit}
+	};
 	
 	for (i = 0; i < 2; i++)
 	{

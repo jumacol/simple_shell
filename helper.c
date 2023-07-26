@@ -41,7 +41,7 @@ void print(char *string, int stream)
 	int i = 0;
 
 	for (; string[i] != '\0'; i++)
-		write(stream, &string[i], 1)
+		write(stream, &string[i], 1);
 }
 
 /**

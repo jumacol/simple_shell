@@ -24,7 +24,7 @@ int main(int args __attribute__((unused)), char **argv)
 	{
 		non_interactive();
 		print(" ($) ", STDOUT_FILENO);
-		if (gtline(&line, &n, stdin) == -1)
+		if (getline(&line, &n, stdin) == -1)
 		{
 			free(line);
 			exit(status);
@@ -33,7 +33,7 @@ int main(int args __attribute__((unused)), char **argv)
 		remove_comment(line);
 		commands = tokenizer(line, ";");
 
-		for (i = 0; command[i] != NULL; I++)
+		for (i = 0; commands[i] != NULL; i++)
 		{
 			current_command = tokenizer(commands[i], " ");
 			if (current_command[0] == NULL)
